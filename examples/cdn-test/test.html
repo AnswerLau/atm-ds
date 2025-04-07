@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM-DS CDN 测试页面</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/atm-ds/dist/styles/atm-ds.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/atm-ds/dist/atm-ds.min.js"></script>
+    <style>
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        .test-section {
+            margin-top: 20px;
+        }
+        .button-group {
+            margin-top: 10px;
+        }
+        .message {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="container">
+        <atm-card class="card">
+            <p slot="title">ATM-DS CDN 测试页面</p>
+            <div class="test-section">
+                <h3>全局变量检测：</h3>
+                <p>atmDs 全局变量： <span :class="isAtmDsAvailable ? 'success' : 'error'">{{ isAtmDsAvailable ? '可用 ✓' : '不可用 ✗' }}</span></p>
+                <p>AtmDS 全局变量： <span :class="isAtmDSAvailable ? 'success' : 'error'">{{ isAtmDSAvailable ? '可用 ✓' : '不可用 ✗' }}</span></p>
+            </div>
+            
+            <div class="test-section">
+                <h3>组件测试：</h3>
+                <div class="button-group">
+                    <i-button type="primary" @click="showMessage('这是一条成功消息', 'success')">成功按钮</i-button>
+                    <atm-button type="success" @click="showMessage('这是一条成功消息', 'success')">成功按钮</atm-button>
+                    <atm-button type="warning" @click="showMessage('这是一条警告消息', 'warning')">警告按钮</atm-button>
+                    <atm-button type="error" @click="showMessage('这是一条错误消息', 'error')">错误按钮</atm-button>
+                </div>
+                
+                <div class="test-section">
+                    <h3>进度条测试：</h3>
+                    <atm-progress :percent="percent"></atm-progress>
+                    <div class="button-group">
+                        <atm-button @click="increasePercent">增加进度</atm-button>
+                        <atm-button @click="decreasePercent">减少进度</atm-button>
+                    </div>
+                </div>
+                
+                <div class="message">
+                    <atm-button @click="showMessage('您点击了消息按钮', 'info')">显示消息</atm-button>
+                </div>
+            </div>
+        </atm-card>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    isAtmDsAvailable: typeof atmDs !== 'undefined',
+                    isAtmDSAvailable: typeof AtmDS !== 'undefined',
+                    percent: 0
+                }
+            },
+            methods: {
+                showMessage(content, type) {
+                    this.$Message[type](content);
+                },
+                increasePercent() {
+                    if (this.percent < 100) {
+                        this.percent += 10;
+                    }
+                },
+                decreasePercent() {
+                    if (this.percent > 0) {
+                        this.percent -= 10;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

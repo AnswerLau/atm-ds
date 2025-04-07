@@ -256,4 +256,9 @@ API.lang = (code) => {
     else console.log(`The ${code} language pack is not loaded.`); // eslint-disable-line no-console
 };
 
+// 确保浏览器环境下同时导出为AtmDS全局变量
+if (typeof window !== 'undefined') {
+    window.AtmDS = API;
+}
+
 module.exports.default = module.exports = API;   // eslint-disable-line no-undef

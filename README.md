@@ -23,15 +23,44 @@ ATM Design System
 
 ## 安装
 
-使用 npm 安装:
-```
+### NPM
+
+```bash
 npm install atm-ds --save
 ```
 
-使用 script 标签全局引入:
+### 使用
+
+#### 完整引入
+
+```js
+import Vue from 'vue';
+import AtmDS from 'atm-ds';
+import 'atm-ds/dist/styles/atm-ds.css';
+
+Vue.use(AtmDS);
+```
+
+#### 按需引入
+
+```js
+import Vue from 'vue';
+import { Button, Card } from 'atm-ds';
+import 'atm-ds/dist/styles/atm-ds.css';
+
+Vue.component('atm-button', Button);
+Vue.component('atm-card', Card);
+```
+
+### CDN 使用
+
 ```html
-<script type="text/javascript" src="atm-ds.min.js"></script>
-<link rel="stylesheet" href="dist/styles/atm-ds.css">
+<!-- 引入Vue -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.min.js"></script>
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/atm-ds/dist/styles/atm-ds.css">
+<!-- 引入组件库 -->
+<script src="https://cdn.jsdelivr.net/npm/atm-ds/dist/atm-ds.min.js"></script>
 ```
 
 ## 使用
@@ -40,8 +69,8 @@ npm install atm-ds --save
 
 ```js
 import Vue from 'vue';
-import AtmDS from 'atmDs';
-import 'atmDs/dist/styles/atm-ds.css';
+import AtmDS from 'atm-ds';
+import 'atm-ds/dist/styles/atm-ds.css';
 
 Vue.use(AtmDS);
 ```
@@ -50,8 +79,8 @@ Vue.use(AtmDS);
 
 ```js
 import Vue from 'vue';
-import { Button, Table } from 'atmDs';
-import 'atmDs/dist/styles/atm-ds.css';
+import { Button, Table } from 'atm-ds';
+import 'atm-ds/dist/styles/atm-ds.css';
 
 Vue.component('AtmButton', AtmButton);
 Vue.component('AtmSlider', AtmSlider);
@@ -76,7 +105,7 @@ Vue.component('AtmSlider', AtmSlider);
 
 ### CSS引入方式
 ```js
-import 'atmDs/dist/styles/atm-ds.css';
+import 'atm-ds/dist/styles/atm-ds.css';
 ```
 
 ## 兼容性

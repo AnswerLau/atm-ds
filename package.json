@@ -1,6 +1,6 @@
 {
     "name": "atm-ds",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "title": "ATM Design System",
     "description": "A high quality UI components Library for ATM Design System with Vue.js",
     "homepage": "https://github.com/AnswerLau/atm-ds",
@@ -27,7 +27,7 @@
     "scripts": {
         "dev": "webpack-dev-server --content-base test/ --open --inline --hot --compress --history-api-fallback --port 8081 --config build/webpack.dev.config.js",
         "dev:s": "webpack-dev-server --content-base test/ --open --inline --hot --compress --history-api-fallback --port 8081 --host 0.0.0.0 --config build/webpack.dev.config.js",
-        "dist:style": "gulp-cli --gulpfile build/build-style.js",
+        "dist:style": "gulp --gulpfile build/build-style.js",
         "dist:dev": "webpack --config build/webpack.dist.dev.config.js",
         "dist:prod": "webpack --config build/webpack.dist.prod.config.js",
         "dist:locale": "webpack --config build/webpack.dist.locale.config.js",

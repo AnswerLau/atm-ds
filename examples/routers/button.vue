@@ -31,7 +31,7 @@
             </Button>
         </ButtonGroup>
         <br><br><br>
-        <Button type="default">Default</Button>
+        <Button type="default">Default66666</Button>
         <Button type="primary">Primary</Button>
         <Button type="dashed">Dashed</Button>
         <Button type="info">Info</Button>
