@@ -117,6 +117,15 @@ import 'atm-ds/dist/styles/atm-ds.css';
 - 支持 [Electron](http://electron.atom.io/)
 - 大多数组件和功能支持 IE9 及以上浏览器，有些组件和功能不支持 IE
 
+## 更新日志
+
+### v1.0.2
+- 更新主色系为 #070B10
+- 优化CDN引用链接
+
+### v1.0.1
+- 初始版本发布
+
 ## 社区
 
 如果您想贡献代码或报告问题:
