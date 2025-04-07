@@ -28,7 +28,7 @@ module.exports = merge(webpackBaseConfig, {
     },
     resolve: {
         alias: {
-            'atm-ds': '../../src/index',
+            'atmDs': '../../src/index',
             vue: 'vue/dist/vue.esm.js'
             // vue: 'vue/dist/vue.runtime.js'
         }

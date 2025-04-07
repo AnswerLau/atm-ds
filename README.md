@@ -40,8 +40,8 @@ npm install atm-ds --save
 
 ```js
 import Vue from 'vue';
-import AtmDS from 'atm-ds';
-import 'atm-ds/dist/styles/atm-ds.css';
+import AtmDS from 'atmDs';
+import 'atmDs/dist/styles/atm-ds.css';
 
 Vue.use(AtmDS);
 ```
@@ -50,8 +50,8 @@ Vue.use(AtmDS);
 
 ```js
 import Vue from 'vue';
-import { AtmButton, AtmSlider } from 'atm-ds';
-import 'atm-ds/dist/styles/atm-ds.css';
+import { Button, Table } from 'atmDs';
+import 'atmDs/dist/styles/atm-ds.css';
 
 Vue.component('AtmButton', AtmButton);
 Vue.component('AtmSlider', AtmSlider);
@@ -76,7 +76,7 @@ Vue.component('AtmSlider', AtmSlider);
 
 ### CSS引入方式
 ```js
-import 'atm-ds/dist/styles/atm-ds.css';
+import 'atmDs/dist/styles/atm-ds.css';
 ```
 
 ## 兼容性

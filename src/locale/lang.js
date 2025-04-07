@@ -5,11 +5,11 @@ const isServer = Vue.prototype.$isServer;
 
 export default function (lang) {
     if (!isServer) {
-        if (typeof window.atm-ds !== 'undefined') {
-            if (!('langs' in atm-ds)) {
-                atm-ds.langs = {};
+        if (typeof window.atmDs !== 'undefined') {
+            if (!('langs' in atmDs)) {
+                atmDs.langs = {};
             }
-            atm-ds.langs[lang.i.locale] = lang;
+            atmDs.langs[lang.i.locale] = lang;
         }
     }
 };

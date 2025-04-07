@@ -14,15 +14,15 @@
 
 ```js
 // 引入样式
-import 'atm-ds/dist/styles/atm-ds.css';
+import 'atmDs/dist/styles/atm-ds.css';
 
 // 全局引入
 import Vue from 'vue';
-import AtmDS from 'atm-ds';
+import AtmDS from 'atmDs';
 Vue.use(AtmDS);
 
 // 按需引入
-import { Button, Table } from 'atm-ds';
+import { Button, Table } from 'atmDs';
 Vue.component('AtmButton', Button);
 Vue.component('AtmTable', Table);
 ```
