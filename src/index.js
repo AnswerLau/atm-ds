@@ -144,7 +144,7 @@ const components = {
     Upload
 };
 
-const iview = {
+const atmDs = {
     ...components,
     iButton: Button,
     iCircle: Circle,
@@ -168,11 +168,11 @@ const install = function(Vue, opts = {}) {
     locale.use(opts.locale);
     locale.i18n(opts.i18n);
 
-    Object.keys(iview).forEach(key => {
-        Vue.component(key, iview[key]);
+    Object.keys(atmDs).forEach(key => {
+        Vue.component(key, atmDs[key]);
     });
 
-    Vue.prototype.$IVIEW = {
+    Vue.prototype.$ATM_DS = {
         size: opts.size || '',
         transfer: 'transfer' in opts ? opts.transfer : '',
         select: {
@@ -251,7 +251,7 @@ const API = {
 };
 
 API.lang = (code) => {
-    const langObject = window['iview/locale'].default;
+    const langObject = window['atm-ds/locale'].default;
     if (code === langObject.i.locale) locale.use(langObject);
     else console.log(`The ${code} language pack is not loaded.`); // eslint-disable-line no-console
 };

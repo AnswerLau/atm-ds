@@ -2,9 +2,12 @@
 // Project: https://github.com/iview/iview
 // Definitions by: yangdan
 // Definitions: https://github.com/yangdan8/iview.git
-import iView from './iview';
+import Vue from 'vue';
+import { ATMDSComponent } from './atm-ds.components';
 
-export default iView;
-export as namespace iView;
+export default ATMDSComponent;
 
-export * from './iview.components';
+export { ATMDSComponent as Component };
+export as namespace ATMDS;
+
+export * from './atm-ds.components';

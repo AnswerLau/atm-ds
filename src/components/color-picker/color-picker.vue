@@ -180,7 +180,7 @@ export default {
                 return oneOf(value, ['small', 'large', 'default']);
             },
             default () {
-                return !this.$IVIEW || this.$IVIEW.size === '' ? 'default' : this.$IVIEW.size;
+                return !this.$ATM_DS || this.$ATM_DS.size === '' ? 'default' : this.$ATM_DS.size;
             }
         },
         hideDropDown: {
@@ -210,7 +210,7 @@ export default {
         transfer: {
             type: Boolean,
             default () {
-                return !this.$IVIEW || this.$IVIEW.transfer === '' ? false : this.$IVIEW.transfer;
+                return !this.$ATM_DS || this.$ATM_DS.transfer === '' ? false : this.$ATM_DS.transfer;
             }
         },
         name: {
@@ -352,41 +352,41 @@ export default {
                 }
             ];
         },
-        // 3.4.0, global setting customArrow 有值时，arrow 赋值空
         arrowType () {
             let type = 'ios-arrow-down';
-
-            if (this.$IVIEW) {
-                if (this.$IVIEW.colorPicker.customArrow) {
+            if (this.$ATM_DS) {
+                if (this.$ATM_DS.colorPicker.customArrow) {
                     type = '';
-                } else if (this.$IVIEW.colorPicker.arrow) {
-                    type = this.$IVIEW.colorPicker.arrow;
+                } else if (this.$ATM_DS.colorPicker.arrow) {
+                    type = this.$ATM_DS.colorPicker.arrow;
                 }
             }
             return type;
         },
-        // 3.4.0, global setting
         customArrowType () {
             let type = '';
-
-            if (this.$IVIEW) {
-                if (this.$IVIEW.colorPicker.customArrow) {
-                    type = this.$IVIEW.colorPicker.customArrow;
+            if (this.$ATM_DS) {
+                if (this.$ATM_DS.colorPicker.customArrow) {
+                    type = this.$ATM_DS.colorPicker.customArrow;
                 }
             }
             return type;
         },
-        // 3.4.0, global setting
         arrowSize () {
             let size = '';
-
-            if (this.$IVIEW) {
-                if (this.$IVIEW.colorPicker.arrowSize) {
-                    size = this.$IVIEW.colorPicker.arrowSize;
+            if (this.$ATM_DS) {
+                if (this.$ATM_DS.colorPicker.arrowSize) {
+                    size = this.$ATM_DS.colorPicker.arrowSize;
                 }
             }
             return size;
-        }
+        },
+        sizeClasses () {
+            return !this.$ATM_DS || this.$ATM_DS.size === '' ? 'default' : this.$ATM_DS.size;
+        },
+        transferClasses () {
+            return !this.$ATM_DS || this.$ATM_DS.transfer === '' ? false : this.$ATM_DS.transfer;
+        },
     },
 
     watch: {
