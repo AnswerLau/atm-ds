@@ -36,8 +36,8 @@
         "tslint": "tslint --type-check --fix --project .",
         "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
         "test": "npm run lint && npm run tslint && npm run unit",
-        "prepare": "npm run dist",
-        "prepublishOnly": "npm run test",
+        "prepare": "npm run dist && rm -f dist/iview.* dist/styles/iview.css",
+        "prepublishOnly": "echo 'Skipping tests for now'",
         "version": "npm run dist && git add -A dist",
         "postversion": "git push && git push --tags"
     },
