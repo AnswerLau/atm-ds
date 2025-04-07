@@ -26,7 +26,7 @@ ATM Design System
 ### NPM
 
 ```bash
-npm install atm-ds@1.0.2 --save
+npm install atm-ds@1.0.3 --save
 ```
 
 ### 使用
@@ -57,9 +57,9 @@ Vue.component('atm-card', Card);
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.min.js"></script>
 <!-- 引入样式 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/atm-ds@1.0.2/dist/styles/atm-ds.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/atm-ds@1.0.3/dist/styles/atm-ds.css">
 <!-- 引入组件库 -->
-<script src="https://cdn.jsdelivr.net/npm/atm-ds@1.0.2/dist/atm-ds.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/atm-ds@1.0.3/dist/atm-ds.min.js"></script>
 ```
 
 ## 使用
@@ -117,6 +117,10 @@ import 'atm-ds/dist/styles/atm-ds.css';
 - 大多数组件和功能支持 IE9 及以上浏览器，有些组件和功能不支持 IE
 
 ## 更新日志
+
+### v1.0.3
+- 更新引用说明，明确指定版本号
+- 优化CDN链接格式
 
 ### v1.0.2
 - 更新主色系为 #070B10
