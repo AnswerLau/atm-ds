@@ -84,7 +84,7 @@ export function csv(
   noHeader?: boolean,
 ): string;
 
-interface IViewGlobalOptions {
+interface ATMDSGlobalOptions {
   size?: string;
   transfer?: boolean | string;
   select: {
@@ -140,7 +140,7 @@ interface IViewGlobalOptions {
   };
 }
 
-interface IViewInstallOptions extends IViewGlobalOptions {
+interface ATMDSInstallOptions extends ATMDSGlobalOptions {
   locale?: any;
   i18n?: any;
 }
@@ -158,13 +158,13 @@ interface IViewInstallOptions extends IViewGlobalOptions {
 export const version: string;
 export const locale: (l: any) => void;
 export const i18n: (fn: any) => void;
-export const install: (Vue: Vue, opts: IViewInstallOptions) => void;
+export const install: (Vue: Vue, opts: ATMDSInstallOptions) => void;
 export const lang: (code: string) => void;
 
 import * as m from 'vue';
 declare module 'vue/types/vue' {
   interface Vue {
-    $IVIEW: IViewGlobalOptions;
+    $ATM_DS: ATMDSGlobalOptions;
   }
 }
 
