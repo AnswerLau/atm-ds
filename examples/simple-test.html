@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>iView 简单测试页面</title>
+    <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1"/>
+    <!-- 引入 Vue 和 iView 的 CDN 版本，避免本地构建问题 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/iview@3.5.4/dist/styles/iview.css">
+    <script src="https://cdn.jsdelivr.net/npm/iview@3.5.4/dist/iview.min.js"></script>
+    <style>
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="container">
+        <Card class="card">
+            <p slot="title">iView 组件测试</p>
+            <p>这是一个使用 CDN 版本的 iView 组件库的测试页面，不依赖本地构建。</p>
+            
+            <Divider>按钮组件</Divider>
+            <Button type="primary">主要按钮</Button>
+            <Button type="success">成功按钮</Button>
+            <Button type="warning">警告按钮</Button>
+            <Button type="error">错误按钮</Button>
+            
+            <Divider>进度条组件</Divider>
+            <Progress :percent="percent"></Progress>
+            <ButtonGroup>
+                <Button icon="ios-add" @click="add"></Button>
+                <Button icon="ios-remove" @click="minus"></Button>
+            </ButtonGroup>
+            
+            <Divider>提示组件</Divider>
+            <Button @click="showMessage">显示消息</Button>
+        </Card>
+    </div>
+    
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                percent: 25
+            },
+            methods: {
+                add() {
+                    if (this.percent >= 100) {
+                        return;
+                    }
+                    this.percent += 10;
+                },
+                minus() {
+                    if (this.percent <= 0) {
+                        return;
+                    }
+                    this.percent -= 10;
+                },
+                showMessage() {
+                    this.$Message.info('这是一条提示消息');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
