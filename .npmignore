@@ -1,0 +1,41 @@
+# 开发和构建文件
+.babelrc
+.eslintrc.json
+.travis.yml
+.gitignore
+tslint.json
+tsconfig.json
+
+# 开发目录和文件
+build/
+examples/
+test/
+fix-natives.js
+fix-build-issue.sh
+rename-iview.sh
+
+# 旧文件
+**/iview.*
+**/iview-*.js
+iview.min.js.gz
+iview.js.map
+iview.min.js.map
+
+# 编辑器配置
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 日志文件
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 系统文件
+.DS_Store
+Thumbs.db 

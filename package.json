@@ -15,11 +15,14 @@
         "design-system"
     ],
     "main": "dist/atm-ds.js",
+    "module": "src/index.js",
     "typings": "types/index.d.ts",
     "files": [
         "dist",
         "src",
-        "types"
+        "types",
+        "LICENSE",
+        "README.md"
     ],
     "scripts": {
         "dev": "webpack-dev-server --content-base test/ --open --inline --hot --compress --history-api-fallback --port 8081 --config build/webpack.dev.config.js",
@@ -33,7 +36,10 @@
         "tslint": "tslint --type-check --fix --project .",
         "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
         "test": "npm run lint && npm run tslint && npm run unit",
-        "prepare": "npm run dist"
+        "prepare": "npm run dist",
+        "prepublishOnly": "npm run test",
+        "version": "npm run dist && git add -A dist",
+        "postversion": "git push && git push --tags"
     },
     "repository": {
         "type": "git",
