@@ -66,7 +66,7 @@
          */
         data () {
             return {
-                prefix: 'ivu-split',
+                prefix: 'atm-split',
                 offset: 0,
                 oldOffset: 0,
                 isMoving: false,

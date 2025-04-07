@@ -4,7 +4,7 @@
             :title="t('i.page.prev')"
             :class="prevClasses"
             @click.stop="prev">
-            <a><i class="ivu-icon ivu-icon-ios-arrow-back"></i></a>
+            <a><i class="atm-icon atm-icon-ios-arrow-back"></i></a>
         </li>
         <div :class="simplePagerClasses" :title="currentPage + '/' + allPages">
             <input
@@ -22,7 +22,7 @@
             :title="t('i.page.next')"
             :class="nextClasses"
             @click.stop="next">
-            <a><i class="ivu-icon ivu-icon-ios-arrow-forward"></i></a>
+            <a><i class="atm-icon atm-icon-ios-arrow-forward"></i></a>
         </li>
     </ul>
     <ul :class="wrapClasses" :style="styles" v-else>
@@ -33,10 +33,10 @@
             :title="t('i.page.prev')"
             :class="prevClasses"
             @click.stop="prev">
-            <a><template v-if="prevText !== ''">{{ prevText }}</template><i v-else class="ivu-icon ivu-icon-ios-arrow-back"></i></a>
+            <a><template v-if="prevText !== ''">{{ prevText }}</template><i v-else class="atm-icon atm-icon-ios-arrow-back"></i></a>
         </li>
         <li title="1" :class="firstPageClasses" @click.stop="changePage(1)"><a>1</a></li>
-        <li :title="t('i.page.prev5')" v-if="currentPage > 5" :class="[prefixCls + '-item-jump-prev']" @click.stop="fastPrev"><a><i class="ivu-icon ivu-icon-ios-arrow-back"></i></a></li>
+        <li :title="t('i.page.prev5')" v-if="currentPage > 5" :class="[prefixCls + '-item-jump-prev']" @click.stop="fastPrev"><a><i class="atm-icon atm-icon-ios-arrow-back"></i></a></li>
         <li :title="currentPage - 3" v-if="currentPage === 5" :class="[prefixCls + '-item']" @click.stop="changePage(currentPage - 3)"><a>{{ currentPage - 3 }}</a></li>
         <li :title="currentPage - 2" v-if="currentPage - 2 > 1" :class="[prefixCls + '-item']" @click.stop="changePage(currentPage - 2)"><a>{{ currentPage - 2 }}</a></li>
         <li :title="currentPage - 1" v-if="currentPage - 1 > 1" :class="[prefixCls + '-item']" @click.stop="changePage(currentPage - 1)"><a>{{ currentPage - 1 }}</a></li>
@@ -44,13 +44,13 @@
         <li :title="currentPage + 1" v-if="currentPage + 1 < allPages" :class="[prefixCls + '-item']" @click.stop="changePage(currentPage + 1)"><a>{{ currentPage + 1 }}</a></li>
         <li :title="currentPage + 2" v-if="currentPage + 2 < allPages" :class="[prefixCls + '-item']" @click.stop="changePage(currentPage + 2)"><a>{{ currentPage + 2 }}</a></li>
         <li :title="currentPage + 3" v-if="allPages - currentPage === 4" :class="[prefixCls + '-item']" @click.stop="changePage(currentPage + 3)"><a>{{ currentPage + 3 }}</a></li>
-        <li :title="t('i.page.next5')" v-if="allPages - currentPage >= 5" :class="[prefixCls + '-item-jump-next']" @click.stop="fastNext"><a><i class="ivu-icon ivu-icon-ios-arrow-forward"></i></a></li>
+        <li :title="t('i.page.next5')" v-if="allPages - currentPage >= 5" :class="[prefixCls + '-item-jump-next']" @click.stop="fastNext"><a><i class="atm-icon atm-icon-ios-arrow-forward"></i></a></li>
         <li :title="allPages" v-if="allPages > 1" :class="lastPageClasses" @click.stop="changePage(allPages)"><a>{{ allPages }}</a></li>
         <li
             :title="t('i.page.next')"
             :class="nextClasses"
             @click.stop="next">
-            <a><template v-if="nextText !== ''">{{ nextText }}</template><i v-else class="ivu-icon ivu-icon-ios-arrow-forward"></i></a>
+            <a><template v-if="nextText !== ''">{{ nextText }}</template><i v-else class="atm-icon atm-icon-ios-arrow-forward"></i></a>
         </li>
         <Options
             :show-sizer="showSizer"
@@ -73,7 +73,7 @@
     import Options from './options.vue';
     import Locale from '../../mixins/locale';
 
-    const prefixCls = 'ivu-page';
+    const prefixCls = 'atm-page';
 
     export default {
         name: 'Page',
@@ -107,7 +107,7 @@
             transfer: {
                 type: Boolean,
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.transfer === '' ? false : this.$IVIEW.transfer;
+                    return !this.$ATM_DS || this.$ATM_DS.transfer === '' ? false : this.$ATM_DS.transfer;
                 }
             },
             size: {

@@ -9,7 +9,7 @@
     import Icon from '../icon';
     import { oneOf } from '../../utils/assist';
 
-    const prefixCls = 'ivu-avatar';
+    const prefixCls = 'atm-avatar';
 
     export default {
         name: 'Avatar',
@@ -26,7 +26,7 @@
                     return oneOf(value, ['small', 'large', 'default']);
                 },
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.size === '' ? 'default' : this.$IVIEW.size;
+                    return !this.$ATM_DS || this.$ATM_DS.size === '' ? 'default' : this.$ATM_DS.size;
                 }
             },
             src: {

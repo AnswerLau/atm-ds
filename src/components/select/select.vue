@@ -89,7 +89,7 @@
     import SelectHead from './select-head.vue';
     import FunctionalOptions from './functional-options.vue';
 
-    const prefixCls = 'ivu-select';
+    const prefixCls = 'atm-select';
     const optionRegexp = /^i-option$|^Option$/i;
     const optionGroupRegexp = /option-?group/i;
 
@@ -207,7 +207,7 @@
                     return oneOf(value, ['small', 'large', 'default']);
                 },
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.size === '' ? 'default' : this.$IVIEW.size;
+                    return !this.$ATM_DS || this.$ATM_DS.size === '' ? 'default' : this.$ATM_DS.size;
                 }
             },
             labelInValue: {
@@ -226,7 +226,7 @@
             transfer: {
                 type: Boolean,
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.transfer === '' ? false : this.$IVIEW.transfer;
+                    return !this.$ATM_DS || this.$ATM_DS.transfer === '' ? false : this.$ATM_DS.transfer;
                 }
             },
             // Use for AutoComplete
@@ -310,7 +310,7 @@
                 return {
                     [prefixCls + '-dropdown-transfer']: this.transfer,
                     [prefixCls + '-multiple']: this.multiple && this.transfer,
-                    ['ivu-auto-complete']: this.autoComplete,
+                    ['atm-auto-complete']: this.autoComplete,
                     [this.transferClassName]: this.transferClassName
                 };
             },

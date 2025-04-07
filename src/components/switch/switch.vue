@@ -16,7 +16,7 @@
 <script>
     import { oneOf } from '../../utils/assist';
     import Emitter from '../../mixins/emitter';
-    const prefixCls = 'ivu-switch';
+    const prefixCls = 'atm-switch';
     export default {
         name: 'iSwitch',
         mixins: [ Emitter ],
@@ -42,7 +42,7 @@
                     return oneOf(value, ['large', 'small', 'default']);
                 },
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.size === '' ? 'default' : this.$IVIEW.size;
+                    return !this.$ATM_DS || this.$ATM_DS.size === '' ? 'default' : this.$ATM_DS.size;
                 }
             },
             name: {

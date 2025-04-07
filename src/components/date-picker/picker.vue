@@ -87,8 +87,8 @@
     import {findComponentsDownward} from '../../utils/assist';
     import Emitter from '../../mixins/emitter';
 
-    const prefixCls = 'ivu-date-picker';
-    const pickerPrefixCls = 'ivu-picker';
+    const prefixCls = 'atm-date-picker';
+    const pickerPrefixCls = 'atm-picker';
 
     const isEmptyArray = val => val.reduce((isEmpty, str) => isEmpty && !str || (typeof str === 'string' && str.trim() === ''), true);
     const keyValueMapper = {
@@ -106,7 +106,7 @@
     };
 
     const pulseElement = (el) => {
-        const pulseClass = 'ivu-date-picker-btn-pulse';
+        const pulseClass = 'atm-date-picker-btn-pulse';
         el.classList.add(pulseClass);
         setTimeout(() => el.classList.remove(pulseClass), 200);
     };
@@ -175,7 +175,7 @@
                     return oneOf(value, ['small', 'large', 'default']);
                 },
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.size === '' ? 'default' : this.$IVIEW.size;
+                    return !this.$ATM_DS || this.$ATM_DS.size === '' ? 'default' : this.$ATM_DS.size;
                 }
             },
             placeholder: {
@@ -191,7 +191,7 @@
             transfer: {
                 type: Boolean,
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.transfer === '' ? false : this.$IVIEW.transfer;
+                    return !this.$ATM_DS || this.$ATM_DS.transfer === '' ? false : this.$ATM_DS.transfer;
                 }
             },
             name: {
@@ -285,21 +285,21 @@
                 if (this.type === 'time' || this.type === 'timerange') {
                     type = 'ios-time-outline';
 
-                    if (this.$IVIEW) {
-                        if (this.$IVIEW.timePicker.customIcon) {
+                    if (this.$ATM_DS) {
+                        if (this.$ATM_DS.timePicker.customIcon) {
                             type = '';
-                        } else if (this.$IVIEW.timePicker.icon) {
-                            type = this.$IVIEW.timePicker.icon;
+                        } else if (this.$ATM_DS.timePicker.icon) {
+                            type = this.$ATM_DS.timePicker.icon;
                         }
                     }
                 } else {
                     type = 'ios-calendar-outline';
 
-                    if (this.$IVIEW) {
-                        if (this.$IVIEW.datePicker.customIcon) {
+                    if (this.$ATM_DS) {
+                        if (this.$ATM_DS.datePicker.customIcon) {
                             type = '';
-                        } else if (this.$IVIEW.datePicker.icon) {
-                            type = this.$IVIEW.datePicker.icon;
+                        } else if (this.$ATM_DS.datePicker.icon) {
+                            type = this.$ATM_DS.datePicker.icon;
                         }
                     }
                 }
@@ -314,15 +314,15 @@
 
                 if (!this.showClose) {
                     if (this.type === 'time' || this.type === 'timerange') {
-                        if (this.$IVIEW) {
-                            if (this.$IVIEW.timePicker.customIcon) {
-                                type = this.$IVIEW.timePicker.customIcon;
+                        if (this.$ATM_DS) {
+                            if (this.$ATM_DS.timePicker.customIcon) {
+                                type = this.$ATM_DS.timePicker.customIcon;
                             }
                         }
                     } else {
-                        if (this.$IVIEW) {
-                            if (this.$IVIEW.datePicker.customIcon) {
-                                type = this.$IVIEW.datePicker.customIcon;
+                        if (this.$ATM_DS) {
+                            if (this.$ATM_DS.datePicker.customIcon) {
+                                type = this.$ATM_DS.datePicker.customIcon;
                             }
                         }
                     }
@@ -336,15 +336,15 @@
 
                 if (!this.showClose) {
                     if (this.type === 'time' || this.type === 'timerange') {
-                        if (this.$IVIEW) {
-                            if (this.$IVIEW.timePicker.iconSize) {
-                                size = this.$IVIEW.timePicker.iconSize;
+                        if (this.$ATM_DS) {
+                            if (this.$ATM_DS.timePicker.iconSize) {
+                                size = this.$ATM_DS.timePicker.iconSize;
                             }
                         }
                     } else {
-                        if (this.$IVIEW) {
-                            if (this.$IVIEW.datePicker.iconSize) {
-                                size = this.$IVIEW.datePicker.iconSize;
+                        if (this.$ATM_DS) {
+                            if (this.$ATM_DS.datePicker.iconSize) {
+                                size = this.$ATM_DS.datePicker.iconSize;
                             }
                         }
                     }
@@ -572,7 +572,7 @@
                     const double = direction.match(/up|down/) ? '-double' : '';
 
                     // pulse button
-                    const button = this.$refs.drop.$el.querySelector(`.ivu-date-picker-${position}-btn-arrow${double}`);
+                    const button = this.$refs.drop.$el.querySelector(`.atm-date-picker-${position}-btn-arrow${double}`);
                     if (button) pulseElement(button);
                     return;
                 }

@@ -14,7 +14,7 @@
         },
         data () {
             return {
-                prefix: 'ivu-split-trigger',
+                prefix: 'atm-split-trigger',
                 initOffset: 0
             };
         },

@@ -1,7 +1,7 @@
 <template>
     <i-select
         ref="select"
-        class="ivu-auto-complete"
+        class="atm-auto-complete"
         :label="label"
         :disabled="disabled"
         :clearable="clearable"
@@ -76,7 +76,7 @@
                     return oneOf(value, ['small', 'large', 'default']);
                 },
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.size === '' ? 'default' : this.$IVIEW.size;
+                    return !this.$ATM_DS || this.$ATM_DS.size === '' ? 'default' : this.$ATM_DS.size;
                 }
             },
             icon: {
@@ -95,7 +95,7 @@
             transfer: {
                 type: Boolean,
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.transfer === '' ? false : this.$IVIEW.transfer;
+                    return !this.$ATM_DS || this.$ATM_DS.transfer === '' ? false : this.$ATM_DS.transfer;
                 }
             },
             name: {

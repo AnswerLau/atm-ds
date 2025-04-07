@@ -1,13 +1,13 @@
 <template>
-    <div class="ivu-list-item-meta">
-        <div class="ivu-list-item-meta-avatar" v-if="avatar || $slots.avatar">
+    <div class="atm-list-item-meta">
+        <div class="atm-list-item-meta-avatar" v-if="avatar || $slots.avatar">
             <slot name="avatar">
                 <Avatar :src="avatar" />
             </slot>
         </div>
-        <div class="ivu-list-item-meta-content">
-            <div v-if="title || $slots.title" class="ivu-list-item-meta-title"><slot name="title">{{ title }}</slot></div>
-            <div v-if="description || $slots.description" class="ivu-list-item-meta-description"><slot name="description">{{ description }}</slot></div>
+        <div class="atm-list-item-meta-content">
+            <div v-if="title || $slots.title" class="atm-list-item-meta-title"><slot name="title">{{ title }}</slot></div>
+            <div v-if="description || $slots.description" class="atm-list-item-meta-description"><slot name="description">{{ description }}</slot></div>
         </div>
     </div>
 </template>

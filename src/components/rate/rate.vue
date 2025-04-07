@@ -32,7 +32,7 @@
 
     import Icon from '../icon/icon.vue';
 
-    const prefixCls = 'ivu-rate';
+    const prefixCls = 'atm-rate';
 
     export default {
         name: 'Rate',
@@ -99,9 +99,9 @@
             },
             iconClasses () {
                 return [
-                    'ivu-icon',
+                    'atm-icon',
                     {
-                        [`ivu-icon-${this.icon}`]: this.icon !== '',
+                        [`atm-icon-${this.icon}`]: this.icon !== '',
                         [`${this.customIcon}`]: this.customIcon !== '',
                     }
                 ];

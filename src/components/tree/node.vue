@@ -4,7 +4,7 @@
             <li>
                 <span :class="arrowClasses" @click="handleExpand">
                     <Icon v-if="showArrow" :type="arrowType" :custom="customArrowType" :size="arrowSize" />
-                    <Icon v-if="showLoading" type="ios-loading" class="ivu-load-loop" />
+                    <Icon v-if="showLoading" type="ios-loading" class="atm-load-loop" />
                 </span>
                 <Checkbox
                         v-if="showCheckbox"
@@ -37,7 +37,7 @@
     import Emitter from '../../mixins/emitter';
     import { findComponentUpward } from '../../utils/assist';
 
-    const prefixCls = 'ivu-tree';
+    const prefixCls = 'atm-tree';
 
     export default {
         name: 'TreeNode',
@@ -140,11 +140,11 @@
             arrowType () {
                 let type = 'ios-arrow-forward';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.tree.customArrow) {
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.tree.customArrow) {
                         type = '';
-                    } else if (this.$IVIEW.tree.arrow) {
-                        type = this.$IVIEW.tree.arrow;
+                    } else if (this.$ATM_DS.tree.arrow) {
+                        type = this.$ATM_DS.tree.arrow;
                     }
                 }
                 return type;
@@ -153,9 +153,9 @@
             customArrowType () {
                 let type = '';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.tree.customArrow) {
-                        type = this.$IVIEW.tree.customArrow;
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.tree.customArrow) {
+                        type = this.$ATM_DS.tree.customArrow;
                     }
                 }
                 return type;
@@ -164,9 +164,9 @@
             arrowSize () {
                 let size = '';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.tree.arrowSize) {
-                        size = this.$IVIEW.tree.arrowSize;
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.tree.arrowSize) {
+                        size = this.$ATM_DS.tree.arrowSize;
                     }
                 }
                 return size;

@@ -1,22 +1,22 @@
 <template>
-    <li class="ivu-list-item" :class="classes">
+    <li class="atm-list-item" :class="classes">
         <template v-if="itemLayout === 'vertical' && $slots.extra">
-            <div class="ivu-list-item-main">
+            <div class="atm-list-item-main">
                 <slot></slot>
-                <ul class="ivu-list-item-action" v-if="$slots.action">
+                <ul class="atm-list-item-action" v-if="$slots.action">
                     <slot name="action"></slot>
                 </ul>
             </div>
-            <div class="ivu-list-item-extra">
+            <div class="atm-list-item-extra">
                 <slot name="extra"></slot>
             </div>
         </template>
         <template v-else>
             <slot></slot>
-            <ul class="ivu-list-item-action" v-if="$slots.action">
+            <ul class="atm-list-item-action" v-if="$slots.action">
                 <slot name="action"></slot>
             </ul>
-            <div class="ivu-list-item-extra">
+            <div class="atm-list-item-extra">
                 <slot name="extra"></slot>
             </div>
         </template>
@@ -54,7 +54,7 @@
             classes () {
                 return [
                     {
-                        'ivu-list-item-no-flex': !this.isFlexMode
+                        'atm-list-item-no-flex': !this.isFlexMode
                     }
                 ];
             }

@@ -31,7 +31,7 @@
     import { findComponentUpward, oneOf } from '../../utils/assist';
     import Emitter from '../../mixins/emitter';
 
-    const prefixCls = 'ivu-checkbox';
+    const prefixCls = 'atm-checkbox';
 
     export default {
         name: 'Checkbox',
@@ -65,7 +65,7 @@
                     return oneOf(value, ['small', 'large', 'default']);
                 },
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.size === '' ? 'default' : this.$IVIEW.size;
+                    return !this.$ATM_DS || this.$ATM_DS.size === '' ? 'default' : this.$ATM_DS.size;
                 }
             },
             name: {

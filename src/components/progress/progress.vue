@@ -2,7 +2,7 @@
     <div :class="wrapClasses">
         <div :class="outerClasses">
             <div :class="innerClasses">
-                <div :class="bgClasses" :style="bgStyle"><div class="ivu-progress-inner-text" v-if="textInside">{{ percent }}%</div></div><div :class="successBgClasses" :style="successBgStyle"></div>
+                <div :class="bgClasses" :style="bgStyle"><div class="atm-progress-inner-text" v-if="textInside">{{ percent }}%</div></div><div :class="successBgClasses" :style="successBgStyle"></div>
             </div>
         </div>
         <span v-if="!hideInfo && !textInside" :class="textClasses">
@@ -21,7 +21,7 @@
     import Icon from '../icon';
     import { oneOf } from '../../utils/assist';
 
-    const prefixCls = 'ivu-progress';
+    const prefixCls = 'atm-progress';
 
     export default {
         name: 'Progress',

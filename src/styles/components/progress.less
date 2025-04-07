@@ -99,14 +99,14 @@
             bottom: 0;
             background: #fff;
             border-radius: 10px;
-            animation: ivu-progress-active 2s @ease-in-out infinite;
+            animation: atm-progress-active 2s @ease-in-out infinite;
         }
     }
 
     &-vertical&-active{
         .@{progress-prefix-cls}-bg:before {
             top: auto;
-            animation: ivu-progress-active-vertical 2s @ease-in-out infinite;
+            animation: atm-progress-active-vertical 2s @ease-in-out infinite;
         }
     }
 
@@ -129,7 +129,7 @@
     }
 }
 
-@keyframes ivu-progress-active {
+@keyframes atm-progress-active {
     0% {
         opacity: .3;
         width: 0;
@@ -140,7 +140,7 @@
     }
 }
 
-@keyframes ivu-progress-active-vertical {
+@keyframes atm-progress-active-vertical {
     0% {
         opacity: .3;
         height: 0;

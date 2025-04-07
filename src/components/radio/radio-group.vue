@@ -7,7 +7,7 @@
     import { oneOf, findComponentsDownward } from '../../utils/assist';
     import Emitter from '../../mixins/emitter';
 
-    const prefixCls = 'ivu-radio-group';
+    const prefixCls = 'atm-radio-group';
 
     let seed = 0;
     const now = Date.now();
@@ -26,7 +26,7 @@
                     return oneOf(value, ['small', 'large', 'default']);
                 },
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.size === '' ? 'default' : this.$IVIEW.size;
+                    return !this.$ATM_DS || this.$ATM_DS.size === '' ? 'default' : this.$ATM_DS.size;
                 }
             },
             type: {
@@ -55,7 +55,7 @@
                     `${prefixCls}`,
                     {
                         [`${prefixCls}-${this.size}`]: !!this.size,
-                        [`ivu-radio-${this.size}`]: !!this.size,
+                        [`atm-radio-${this.size}`]: !!this.size,
                         [`${prefixCls}-${this.type}`]: !!this.type,
                         [`${prefixCls}-vertical`]: this.vertical
                     }

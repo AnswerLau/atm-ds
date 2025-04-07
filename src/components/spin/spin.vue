@@ -12,7 +12,7 @@
     import { oneOf } from '../../utils/assist';
     import ScrollbarMixins from '../modal/mixins-scrollbar';
 
-    const prefixCls = 'ivu-spin';
+    const prefixCls = 'atm-spin';
 
     export default {
         name: 'Spin',
@@ -23,7 +23,7 @@
                     return oneOf(value, ['small', 'large', 'default']);
                 },
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.size === '' ? 'default' : this.$IVIEW.size;
+                    return !this.$ATM_DS || this.$ATM_DS.size === '' ? 'default' : this.$ATM_DS.size;
                 }
             },
             fix: {

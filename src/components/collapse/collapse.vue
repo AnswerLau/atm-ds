@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-    const prefixCls = 'ivu-collapse';
+    const prefixCls = 'atm-collapse';
 
     export default {
         name: 'Collapse',

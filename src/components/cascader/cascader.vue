@@ -65,8 +65,8 @@
     import Emitter from '../../mixins/emitter';
     import Locale from '../../mixins/locale';
 
-    const prefixCls = 'ivu-cascader';
-    const selectPrefixCls = 'ivu-select';
+    const prefixCls = 'atm-cascader';
+    const selectPrefixCls = 'atm-select';
 
     export default {
         name: 'Cascader',
@@ -102,7 +102,7 @@
                     return oneOf(value, ['small', 'large', 'default']);
                 },
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.size === '' ? 'default' : this.$IVIEW.size;
+                    return !this.$ATM_DS || this.$ATM_DS.size === '' ? 'default' : this.$ATM_DS.size;
                 }
             },
             trigger: {
@@ -134,7 +134,7 @@
             transfer: {
                 type: Boolean,
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.transfer === '' ? false : this.$IVIEW.transfer;
+                    return !this.$ATM_DS || this.$ATM_DS.transfer === '' ? false : this.$ATM_DS.transfer;
                 }
             },
             name: {
@@ -238,11 +238,11 @@
             arrowType () {
                 let type = 'ios-arrow-down';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.cascader.customArrow) {
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.cascader.customArrow) {
                         type = '';
-                    } else if (this.$IVIEW.cascader.arrow) {
-                        type = this.$IVIEW.cascader.arrow;
+                    } else if (this.$ATM_DS.cascader.arrow) {
+                        type = this.$ATM_DS.cascader.arrow;
                     }
                 }
                 return type;
@@ -251,9 +251,9 @@
             customArrowType () {
                 let type = '';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.cascader.customArrow) {
-                        type = this.$IVIEW.cascader.customArrow;
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.cascader.customArrow) {
+                        type = this.$ATM_DS.cascader.customArrow;
                     }
                 }
                 return type;
@@ -262,9 +262,9 @@
             arrowSize () {
                 let size = '';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.cascader.arrowSize) {
-                        size = this.$IVIEW.cascader.arrowSize;
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.cascader.arrowSize) {
+                        size = this.$ATM_DS.cascader.arrowSize;
                     }
                 }
                 return size;

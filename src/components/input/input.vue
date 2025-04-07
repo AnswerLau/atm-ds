@@ -3,12 +3,12 @@
         <template v-if="type !== 'textarea'">
             <div :class="[prefixCls + '-group-prepend']" v-if="prepend" v-show="slotReady"><slot name="prepend"></slot></div>
             <div :class="[prefixCls + '-inner-container']">
-                <i class="ivu-icon" :class="['ivu-icon-ios-close-circle', prefixCls + '-icon', prefixCls + '-icon-clear' , prefixCls + '-icon-normal']" v-if="clearable && currentValue && !disabled" @click="handleClear"></i>
-                <i class="ivu-icon" :class="['ivu-icon-' + icon, prefixCls + '-icon', prefixCls + '-icon-normal']" v-else-if="icon" @click="handleIconClick"></i>
-                <i class="ivu-icon ivu-icon-ios-search" :class="[prefixCls + '-icon', prefixCls + '-icon-normal', prefixCls + '-search-icon']" v-else-if="search && enterButton === false" @click="handleSearch"></i>
-                <span class="ivu-input-suffix" v-else-if="showSuffix"><slot name="suffix"><i class="ivu-icon" :class="['ivu-icon-' + suffix]" v-if="suffix"></i></slot></span>
+                <i class="atm-icon" :class="['atm-icon-ios-close-circle', prefixCls + '-icon', prefixCls + '-icon-clear' , prefixCls + '-icon-normal']" v-if="clearable && currentValue && !disabled" @click="handleClear"></i>
+                <i class="atm-icon" :class="['atm-icon-' + icon, prefixCls + '-icon', prefixCls + '-icon-normal']" v-else-if="icon" @click="handleIconClick"></i>
+                <i class="atm-icon atm-icon-ios-search" :class="[prefixCls + '-icon', prefixCls + '-icon-normal', prefixCls + '-search-icon']" v-else-if="search && enterButton === false" @click="handleSearch"></i>
+                <span class="atm-input-suffix" v-else-if="showSuffix"><slot name="suffix"><i class="atm-icon" :class="['atm-icon-' + suffix]" v-if="suffix"></i></slot></span>
                 <transition name="fade">
-                    <i class="ivu-icon ivu-icon-ios-loading ivu-load-loop" :class="[prefixCls + '-icon', prefixCls + '-icon-validate']" v-if="!icon"></i>
+                    <i class="atm-icon atm-icon-ios-loading atm-load-loop" :class="[prefixCls + '-icon', prefixCls + '-icon-validate']" v-if="!icon"></i>
                 </transition>
                 <input
                     :id="elementId"
@@ -39,10 +39,10 @@
             </div>
             <div :class="[prefixCls + '-group-append']" v-if="append" v-show="slotReady"><slot name="append"></slot></div>
             <div :class="[prefixCls + '-group-append', prefixCls + '-search']" v-else-if="search && enterButton" @click="handleSearch">
-                <i class="ivu-icon ivu-icon-ios-search" v-if="enterButton === true"></i>
+                <i class="atm-icon atm-icon-ios-search" v-if="enterButton === true"></i>
                 <template v-else>{{ enterButton }}</template>
             </div>
-            <span class="ivu-input-prefix" v-else-if="showPrefix"><slot name="prefix"><i class="ivu-icon" :class="['ivu-icon-' + prefix]" v-if="prefix"></i></slot></span>
+            <span class="atm-input-prefix" v-else-if="showPrefix"><slot name="prefix"><i class="atm-icon" :class="['atm-icon-' + prefix]" v-if="prefix"></i></slot></span>
         </template>
         <textarea
             v-else
@@ -79,7 +79,7 @@
     import calcTextareaHeight from '../../utils/calcTextareaHeight';
     import Emitter from '../../mixins/emitter';
 
-    const prefixCls = 'ivu-input';
+    const prefixCls = 'atm-input';
 
     export default {
         name: 'Input',
@@ -100,7 +100,7 @@
                     return oneOf(value, ['small', 'large', 'default']);
                 },
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.size === '' ? 'default' : this.$IVIEW.size;
+                    return !this.$ATM_DS || this.$ATM_DS.size === '' ? 'default' : this.$ATM_DS.size;
                 }
             },
             placeholder: {

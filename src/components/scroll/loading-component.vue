@@ -14,7 +14,7 @@
     import Spin from '../spin/spin.vue';
     import Icon from '../icon/icon.vue';
 
-    const prefixCls = 'ivu-scroll';
+    const prefixCls = 'atm-scroll';
 
     export default {
         props: ['text', 'active', 'spinnerHeight'],

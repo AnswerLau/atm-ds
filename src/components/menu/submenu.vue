@@ -25,7 +25,7 @@
     import Emitter from '../../mixins/emitter';
     import mixin from './mixin';
 
-    const prefixCls = 'ivu-menu';
+    const prefixCls = 'atm-menu';
 
     export default {
         name: 'Submenu',
@@ -80,11 +80,11 @@
             arrowType () {
                 let type = 'ios-arrow-down';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.menu.customArrow) {
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.menu.customArrow) {
                         type = '';
-                    } else if (this.$IVIEW.menu.arrow) {
-                        type = this.$IVIEW.menu.arrow;
+                    } else if (this.$ATM_DS.menu.arrow) {
+                        type = this.$ATM_DS.menu.arrow;
                     }
                 }
                 return type;
@@ -93,9 +93,9 @@
             customArrowType () {
                 let type = '';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.menu.customArrow) {
-                        type = this.$IVIEW.menu.customArrow;
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.menu.customArrow) {
+                        type = this.$ATM_DS.menu.customArrow;
                     }
                 }
                 return type;
@@ -104,9 +104,9 @@
             arrowSize () {
                 let size = '';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.menu.arrowSize) {
-                        size = this.$IVIEW.menu.arrowSize;
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.menu.arrowSize) {
+                        size = this.$ATM_DS.menu.arrowSize;
                     }
                 }
                 return size;

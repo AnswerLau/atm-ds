@@ -49,7 +49,7 @@ import Locale from '../../mixins/locale';
 import { oneOf } from '../../utils/assist';
 import { getCalendarList, getNowTime} from './date-format';
 const nowTime = getNowTime();
-const prefixCls = 'ivu-calendar';
+const prefixCls = 'atm-calendar';
 export default {
     name: 'Calendar',
     mixins: [ Locale ],

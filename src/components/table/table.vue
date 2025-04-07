@@ -111,7 +111,7 @@
     import elementResizeDetectorMaker from 'element-resize-detector';
     import { getAllColumns, convertToRows, convertColumnOrder, getRandomStr } from './util';
 
-    const prefixCls = 'ivu-table';
+    const prefixCls = 'atm-table';
 
     let rowKey = 1;
     let columnKey = 1;
@@ -143,7 +143,7 @@
                     return oneOf(value, ['small', 'large', 'default']);
                 },
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.size === '' ? 'default' : this.$IVIEW.size;
+                    return !this.$ATM_DS || this.$ATM_DS.size === '' ? 'default' : this.$ATM_DS.size;
                 }
             },
             width: {

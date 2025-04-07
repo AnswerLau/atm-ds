@@ -59,7 +59,7 @@
         methods: {
             isIcon(node){
                 let nodeName = (node.nodeName || '').toLocaleUpperCase();
-                let isIvu = node.classList.contains('ivu-icon');
+                let isIvu = node.classList.contains('atm-icon');
                 if(nodeName == 'I' && isIvu){
                     return true;
                 }

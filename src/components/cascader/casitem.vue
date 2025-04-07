@@ -2,7 +2,7 @@
     <li :class="classes">
         {{ data.label }}
         <Icon :type="arrowType" :custom="customArrowType" :size="arrowSize" v-if="showArrow" />
-        <i v-if="showLoading" class="ivu-icon ivu-icon-ios-loading ivu-load-loop ivu-cascader-menu-item-loading"></i>
+        <i v-if="showLoading" class="atm-icon atm-icon-ios-loading atm-load-loop atm-cascader-menu-item-loading"></i>
     </li>
 </template>
 <script>
@@ -36,11 +36,11 @@
             arrowType () {
                 let type = 'ios-arrow-forward';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.cascader.customItemArrow) {
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.cascader.customItemArrow) {
                         type = '';
-                    } else if (this.$IVIEW.cascader.itemArrow) {
-                        type = this.$IVIEW.cascader.itemArrow;
+                    } else if (this.$ATM_DS.cascader.itemArrow) {
+                        type = this.$ATM_DS.cascader.itemArrow;
                     }
                 }
                 return type;
@@ -49,9 +49,9 @@
             customArrowType () {
                 let type = '';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.cascader.customItemArrow) {
-                        type = this.$IVIEW.cascader.customItemArrow;
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.cascader.customItemArrow) {
+                        type = this.$ATM_DS.cascader.customItemArrow;
                     }
                 }
                 return type;
@@ -60,9 +60,9 @@
             arrowSize () {
                 let size = '';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.cascader.itemArrowSize) {
-                        size = this.$IVIEW.cascader.itemArrowSize;
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.cascader.itemArrowSize) {
+                        size = this.$ATM_DS.cascader.itemArrowSize;
                     }
                 }
                 return size;

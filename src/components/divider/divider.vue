@@ -9,7 +9,7 @@
 <script>
     import {oneOf} from '../../utils/assist';
 
-    const prefixCls = 'ivu-divider';
+    const prefixCls = 'atm-divider';
 
     export default {
         name: 'Divider',

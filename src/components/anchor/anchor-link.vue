@@ -20,7 +20,7 @@ export default {
     },
     data () {
         return {
-            prefix: 'ivu-anchor-link'
+            prefix: 'atm-anchor-link'
         };
     },
     computed: {

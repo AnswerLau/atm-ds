@@ -4,7 +4,7 @@
             v-if="to"
             :href="linkUrl"
             :target="target"
-            class="ivu-cell-link"
+            class="atm-cell-link"
             @click.exact="handleClickItem($event, false)"
             @click.ctrl="handleClickItem($event, true)"
             @click.meta="handleClickItem($event, true)">
@@ -15,7 +15,7 @@
                 <slot name="label" slot="label"></slot>
             </CellItem>
         </a>
-        <div class="ivu-cell-link" v-else @click="handleClickItem">
+        <div class="atm-cell-link" v-else @click="handleClickItem">
             <CellItem :title="title" :label="label" :extra="extra">
                 <slot name="icon" slot="icon"></slot>
                 <slot slot="default"></slot>
@@ -23,7 +23,7 @@
                 <slot name="label" slot="label"></slot>
             </CellItem>
         </div>
-        <div class="ivu-cell-arrow" v-if="to">
+        <div class="atm-cell-arrow" v-if="to">
             <slot name="arrow">
                 <Icon :type="arrowType" :custom="customArrowType" :size="arrowSize" />
             </slot>
@@ -35,7 +35,7 @@
     import Icon from '../icon/icon.vue';
     import mixinsLink from '../../mixins/link';
 
-    const prefixCls = 'ivu-cell';
+    const prefixCls = 'atm-cell';
 
     export default {
         name: 'Cell',
@@ -87,11 +87,11 @@
             arrowType () {
                 let type = 'ios-arrow-forward';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.cell.customArrow) {
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.cell.customArrow) {
                         type = '';
-                    } else if (this.$IVIEW.cell.arrow) {
-                        type = this.$IVIEW.cell.arrow;
+                    } else if (this.$ATM_DS.cell.arrow) {
+                        type = this.$ATM_DS.cell.arrow;
                     }
                 }
                 return type;
@@ -100,9 +100,9 @@
             customArrowType () {
                 let type = '';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.cell.customArrow) {
-                        type = this.$IVIEW.cell.customArrow;
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.cell.customArrow) {
+                        type = this.$ATM_DS.cell.customArrow;
                     }
                 }
                 return type;
@@ -111,9 +111,9 @@
             arrowSize () {
                 let size = '';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.cell.arrowSize) {
-                        size = this.$IVIEW.cell.arrowSize;
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.cell.arrowSize) {
+                        size = this.$ATM_DS.cell.arrowSize;
                     }
                 }
                 return size;

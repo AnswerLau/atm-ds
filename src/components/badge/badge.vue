@@ -3,9 +3,9 @@
         <slot></slot>
         <sup :class="dotClasses" :style="styles" v-show="badge"></sup>
     </span>
-    <span v-else-if="status" :class="classes" class="ivu-badge-status" ref="badge">
+    <span v-else-if="status" :class="classes" class="atm-badge-status" ref="badge">
         <span :class="statusClasses"></span>
-        <span class="ivu-badge-status-text">{{ text }}</span>
+        <span class="atm-badge-status-text">{{ text }}</span>
     </span>
     <span v-else :class="classes" ref="badge">
         <slot></slot>
@@ -14,7 +14,7 @@
 </template>
 <script>
     import { oneOf } from '../../utils/assist';
-    const prefixCls = 'ivu-badge';
+    const prefixCls = 'atm-badge';
 
     export default {
         name: 'Badge',

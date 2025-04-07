@@ -42,7 +42,7 @@
 
     import { transferIndex as modalIndex, transferIncrease as modalIncrease } from '../../utils/transfer-queue';
 
-    const prefixCls = 'ivu-modal';
+    const prefixCls = 'atm-modal';
 
     export default {
         name: 'Modal',
@@ -61,7 +61,7 @@
             maskClosable: {
                 type: Boolean,
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.modal.maskClosable === '' ? true : this.$IVIEW.modal.maskClosable;
+                    return !this.$ATM_DS || this.$ATM_DS.modal.maskClosable === '' ? true : this.$ATM_DS.modal.maskClosable;
                 }
             },
             title: {
@@ -108,7 +108,7 @@
             transfer: {
                 type: Boolean,
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.transfer === '' ? true : this.$IVIEW.transfer;
+                    return !this.$ATM_DS || this.$ATM_DS.transfer === '' ? true : this.$ATM_DS.transfer;
                 }
             },
             fullscreen: {
@@ -253,7 +253,7 @@
                     this.isMouseTriggerIn = false;
                     return;
                 }
-                // use indexOf,do not use === ,because ivu-modal-wrap can have other custom className
+                // use indexOf,do not use === ,because atm-modal-wrap can have other custom className
                 const className = event.target.getAttribute('class');
                 if (className && className.indexOf(`${prefixCls}-wrap`) > -1) this.handleMask();
             },

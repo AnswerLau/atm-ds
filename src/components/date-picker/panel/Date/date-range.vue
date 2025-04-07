@@ -129,8 +129,8 @@
     import DateMixin from './date-panel-mixin';
     import Locale from '../../../../mixins/locale';
 
-    const prefixCls = 'ivu-picker-panel';
-    const datePrefixCls = 'ivu-date-picker';
+    const prefixCls = 'atm-picker-panel';
+    const datePrefixCls = 'atm-date-picker';
 
     const dateSorter = (a, b) => {
         if (!a || !b) return 0;

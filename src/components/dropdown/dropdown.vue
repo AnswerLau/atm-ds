@@ -25,7 +25,7 @@
     import TransferDom from '../../directives/transfer-dom';
     import { oneOf, findComponentUpward } from '../../utils/assist';
 
-    const prefixCls = 'ivu-dropdown';
+    const prefixCls = 'atm-dropdown';
 
     export default {
         name: 'Dropdown',
@@ -51,7 +51,7 @@
             transfer: {
                 type: Boolean,
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.transfer === '' ? false : this.$IVIEW.transfer;
+                    return !this.$ATM_DS || this.$ATM_DS.transfer === '' ? false : this.$ATM_DS.transfer;
                 }
             },
             transferClassName: {

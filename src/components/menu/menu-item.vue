@@ -16,7 +16,7 @@
     import mixin from './mixin';
     import mixinsLink from '../../mixins/link';
 
-    const prefixCls = 'ivu-menu';
+    const prefixCls = 'atm-menu';
 
     export default {
         name: 'MenuItem',

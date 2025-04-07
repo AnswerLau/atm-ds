@@ -1,14 +1,14 @@
 <template>
-    <div class="ivu-cell-item">
-        <div class="ivu-cell-icon">
+    <div class="atm-cell-item">
+        <div class="atm-cell-icon">
             <slot name="icon"></slot>
         </div>
-        <div class="ivu-cell-main">
-            <div class="ivu-cell-title"><slot>{{ title }}</slot></div>
-            <div class="ivu-cell-label"><slot name="label">{{ label }}</slot></div>
+        <div class="atm-cell-main">
+            <div class="atm-cell-title"><slot>{{ title }}</slot></div>
+            <div class="atm-cell-label"><slot name="label">{{ label }}</slot></div>
         </div>
-        <div class="ivu-cell-footer">
-            <span class="ivu-cell-extra"><slot name="extra">{{ extra }}</slot></span>
+        <div class="atm-cell-footer">
+            <span class="atm-cell-extra"><slot name="extra">{{ extra }}</slot></span>
         </div>
     </div>
 </template>

@@ -6,13 +6,13 @@
             </slot>
         </span>
         <div
-            class="ivu-tag ivu-tag-checked"
+            class="atm-tag atm-tag-checked"
             v-for="(item, index) in selectedMultiple"
             v-if="maxTagCount === undefined || index < maxTagCount">
-            <span class="ivu-tag-text">{{ item.label }}</span>
+            <span class="atm-tag-text">{{ item.label }}</span>
             <Icon type="ios-close" @click.native.stop="removeTag(item)"></Icon>
-        </div><div class="ivu-tag ivu-tag-checked" v-if="maxTagCount !== undefined && selectedMultiple.length > maxTagCount">
-            <span class="ivu-tag-text ivu-select-max-tag">
+        </div><div class="atm-tag atm-tag-checked" v-if="maxTagCount !== undefined && selectedMultiple.length > maxTagCount">
+            <span class="atm-tag-text atm-select-max-tag">
                 <template v-if="maxTagPlaceholder">{{ maxTagPlaceholder(selectedMultiple.length - maxTagCount) }}</template>
                 <template v-else>+ {{ selectedMultiple.length - maxTagCount }}...</template>
             </span>
@@ -47,7 +47,7 @@
     import Emitter from '../../mixins/emitter';
     import Locale from '../../mixins/locale';
 
-    const prefixCls = 'ivu-select';
+    const prefixCls = 'atm-select';
 
     export default {
         name: 'iSelectHead',
@@ -179,11 +179,11 @@
             arrowType () {
                 let type = 'ios-arrow-down';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.select.customArrow) {
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.select.customArrow) {
                         type = '';
-                    } else if (this.$IVIEW.select.arrow) {
-                        type = this.$IVIEW.select.arrow;
+                    } else if (this.$ATM_DS.select.arrow) {
+                        type = this.$ATM_DS.select.arrow;
                     }
                 }
                 return type;
@@ -192,9 +192,9 @@
             customArrowType () {
                 let type = '';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.select.customArrow) {
-                        type = this.$IVIEW.select.customArrow;
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.select.customArrow) {
+                        type = this.$ATM_DS.select.customArrow;
                     }
                 }
                 return type;
@@ -203,9 +203,9 @@
             arrowSize () {
                 let size = '';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.select.arrowSize) {
-                        size = this.$IVIEW.select.arrowSize;
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.select.arrowSize) {
+                        size = this.$ATM_DS.select.arrowSize;
                     }
                 }
                 return size;

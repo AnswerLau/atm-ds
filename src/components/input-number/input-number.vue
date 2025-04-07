@@ -38,8 +38,8 @@
     import { oneOf, findComponentUpward } from '../../utils/assist';
     import Emitter from '../../mixins/emitter';
 
-    const prefixCls = 'ivu-input-number';
-    const iconPrefixCls = 'ivu-icon';
+    const prefixCls = 'atm-input-number';
+    const iconPrefixCls = 'atm-icon';
 
     function addNum (num1, num2) {
         let sq1, sq2, m;
@@ -94,7 +94,7 @@
                     return oneOf(value, ['small', 'large', 'default']);
                 },
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.size === '' ? 'default' : this.$IVIEW.size;
+                    return !this.$ATM_DS || this.$ATM_DS.size === '' ? 'default' : this.$ATM_DS.size;
                 }
             },
             disabled: {

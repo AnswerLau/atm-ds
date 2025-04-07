@@ -27,7 +27,7 @@
     import { oneOf } from '../../utils/assist';
     import { transferIndex, transferIncrease } from '../../utils/transfer-queue';
 
-    const prefixCls = 'ivu-tooltip';
+    const prefixCls = 'atm-tooltip';
 
     export default {
         name: 'Tooltip',
@@ -63,7 +63,7 @@
             transfer: {
                 type: Boolean,
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.transfer === '' ? false : this.$IVIEW.transfer;
+                    return !this.$ATM_DS || this.$ATM_DS.transfer === '' ? false : this.$ATM_DS.transfer;
                 }
             },
             theme: {

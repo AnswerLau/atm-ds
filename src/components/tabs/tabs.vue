@@ -36,7 +36,7 @@
     import Emitter from '../../mixins/emitter';
     import elementResizeDetectorMaker from 'element-resize-detector';
 
-    const prefixCls = 'ivu-tabs';
+    const prefixCls = 'atm-tabs';
     const transitionTime = 300; // from CSS
 
     const getNextTab = (list, activeKey, direction, countDisabledAlso) => {
@@ -188,11 +188,11 @@
             arrowType () {
                 let type = 'ios-close';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.tabs.customCloseIcon) {
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.tabs.customCloseIcon) {
                         type = '';
-                    } else if (this.$IVIEW.tabs.closeIcon) {
-                        type = this.$IVIEW.tabs.closeIcon;
+                    } else if (this.$ATM_DS.tabs.closeIcon) {
+                        type = this.$ATM_DS.tabs.closeIcon;
                     }
                 }
                 return type;
@@ -201,9 +201,9 @@
             customArrowType () {
                 let type = '';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.tabs.customCloseIcon) {
-                        type = this.$IVIEW.tabs.customCloseIcon;
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.tabs.customCloseIcon) {
+                        type = this.$ATM_DS.tabs.customCloseIcon;
                     }
                 }
                 return type;
@@ -212,9 +212,9 @@
             arrowSize () {
                 let size = '';
 
-                if (this.$IVIEW) {
-                    if (this.$IVIEW.tabs.closeIconSize) {
-                        size = this.$IVIEW.tabs.closeIconSize;
+                if (this.$ATM_DS) {
+                    if (this.$ATM_DS.tabs.closeIconSize) {
+                        size = this.$ATM_DS.tabs.closeIconSize;
                     }
                 }
                 return size;

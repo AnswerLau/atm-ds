@@ -1,17 +1,17 @@
 <template>
     <div :class="classes">
-        <div class="ivu-list-header" v-if="header || $slots.header"><slot name="header">{{ header }}</slot></div>
-        <div class="ivu-list-container">
-            <ul class="ivu-list-items"><slot></slot></ul>
+        <div class="atm-list-header" v-if="header || $slots.header"><slot name="header">{{ header }}</slot></div>
+        <div class="atm-list-container">
+            <ul class="atm-list-items"><slot></slot></ul>
         </div>
         <Spin v-if="loading" fix size="large"><slot name="spin"></slot></Spin>
-        <div class="ivu-list-footer" v-if="footer || $slots.footer"><slot name="footer">{{ footer }}</slot></div>
+        <div class="atm-list-footer" v-if="footer || $slots.footer"><slot name="footer">{{ footer }}</slot></div>
     </div>
 </template>
 <script>
     import { oneOf } from '../../utils/assist';
 
-    const prefixCls = 'ivu-list';
+    const prefixCls = 'atm-list';
 
     export default {
         name: 'List',
@@ -51,7 +51,7 @@
                     return oneOf(value, ['small', 'large', 'default']);
                 },
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.size === '' ? 'default' : this.$IVIEW.size;
+                    return !this.$ATM_DS || this.$ATM_DS.size === '' ? 'default' : this.$ATM_DS.size;
                 }
             },
             split: {

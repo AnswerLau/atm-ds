@@ -7,7 +7,7 @@
             <transition :name="'move-' + placement">
                 <div :class="classes" :style="mainStyles" v-if="visible">
                     <div :class="contentClasses" ref="content">
-                        <a class="ivu-drawer-close" v-if="closable" @click="close">
+                        <a class="atm-drawer-close" v-if="closable" @click="close">
                             <slot name="close">
                                 <Icon type="ios-close"></Icon>
                             </slot>
@@ -15,10 +15,10 @@
                         <div :class="[prefixCls + '-header']" v-if="showHead"><slot name="header"><div :class="[prefixCls + '-header-inner']">{{ title }}</div></slot></div>
                         <div :class="[prefixCls + '-body']" :style="styles"><slot></slot></div>
                     </div>
-                    <div class="ivu-drawer-drag" :class="{ 'ivu-drawer-drag-left': placement === 'left' }" v-if="draggable" @mousedown="handleTriggerMousedown">
+                    <div class="atm-drawer-drag" :class="{ 'atm-drawer-drag-left': placement === 'left' }" v-if="draggable" @mousedown="handleTriggerMousedown">
                         <slot name="trigger">
-                            <div class="ivu-drawer-drag-move-trigger">
-                                <div class="ivu-drawer-drag-move-trigger-point">
+                            <div class="atm-drawer-drag-move-trigger">
+                                <div class="atm-drawer-drag-move-trigger-point">
                                     <i></i><i></i><i></i><i></i><i></i>
                                 </div>
                             </div>
@@ -38,7 +38,7 @@
 
     import { on, off } from '../../utils/dom';
 
-    const prefixCls = 'ivu-drawer';
+    const prefixCls = 'atm-drawer';
 
     export default {
         name: 'Drawer',
@@ -92,7 +92,7 @@
             transfer: {
                 type: Boolean,
                 default () {
-                    return !this.$IVIEW || this.$IVIEW.transfer === '' ? true : this.$IVIEW.transfer;
+                    return !this.$ATM_DS || this.$ATM_DS.transfer === '' ? true : this.$ATM_DS.transfer;
                 }
             },
             className: {
@@ -202,7 +202,7 @@
                 }
             },
             handleWrapClick (event) {
-                // use indexOf,do not use === ,because ivu-modal-wrap can have other custom className
+                // use indexOf,do not use === ,because atm-modal-wrap can have other custom className
                 const className = event.target.getAttribute('class');
                 if (className && className.indexOf(`${prefixCls}-wrap`) > -1) this.handleMask();
             },
