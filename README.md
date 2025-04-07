@@ -26,7 +26,7 @@ ATM Design System
 ### NPM
 
 ```bash
-npm install atm-ds --save
+npm install atm-ds@1.0.2 --save
 ```
 
 ### 使用
@@ -58,9 +58,9 @@ Vue.component('atm-card', Card);
 <!-- 引入Vue -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.min.js"></script>
 <!-- 引入样式 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/atm-ds/dist/styles/atm-ds.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/atm-ds@1.0.2/dist/styles/atm-ds.css">
 <!-- 引入组件库 -->
-<script src="https://cdn.jsdelivr.net/npm/atm-ds/dist/atm-ds.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/atm-ds@1.0.2/dist/atm-ds.min.js"></script>
 ```
 
 ## 使用
