@@ -122,6 +122,8 @@ docker run -it --rm -v $(pwd):/app -w /app node:10 npm install --legacy-peer-dep
 <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/iview@3.5.4/dist/styles/iview.css">
 <script src="https://cdn.jsdelivr.net/npm/iview@3.5.4/dist/iview.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/atm-ds@1.0.0/dist/styles/atm-ds.css">
+<script src="https://cdn.jsdelivr.net/npm/atm-ds@1.0.0/dist/atm-ds.min.js"></script>
 ```
 
 我们已经在 `examples/simple-test.html` 中提供了一个使用 CDN 版本的示例。

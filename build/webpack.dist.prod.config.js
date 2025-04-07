@@ -15,8 +15,8 @@ module.exports = merge(webpackBaseConfig, {
     output: {
         path: path.resolve(__dirname, '../dist'),
         publicPath: '/dist/',
-        filename: 'iview.min.js',
-        library: 'iview',
+        filename: 'atm-ds.min.js',
+        library: 'atm-ds',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
