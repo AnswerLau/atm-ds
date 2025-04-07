@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATM-DS CDN 测试页面</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/atm-ds@1.0.3/dist/styles/atm-ds.css">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/atm-ds@1.0.3/dist/styles/atm-ds.css">
+    <!-- 引入组件库 -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/atm-ds@1.0.3/dist/atm-ds.min.js"></script>
     <style>
         .container {
@@ -37,53 +39,76 @@
 </head>
 <body>
     <div id="app" class="container">
-        <atm-card class="card">
+        <Card class="card">
             <p slot="title">ATM-DS CDN 测试页面</p>
             <div class="test-section">
                 <h3>全局变量检测：</h3>
                 <p>atmDs 全局变量： <span :class="isAtmDsAvailable ? 'success' : 'error'">{{ isAtmDsAvailable ? '可用 ✓' : '不可用 ✗' }}</span></p>
                 <p>AtmDS 全局变量： <span :class="isAtmDSAvailable ? 'success' : 'error'">{{ isAtmDSAvailable ? '可用 ✓' : '不可用 ✗' }}</span></p>
+                <p>版本： <span>{{ atmDsVersion }}</span></p>
             </div>
             
             <div class="test-section">
                 <h3>组件测试：</h3>
                 <div class="button-group">
-                    <i-input type="text" placeholder="请输入内容"></i-input>
-                    <i-button type="primary" @click="showMessage('这是一条成功消息', 'success')">成功按钮</i-button>
-                    <atm-button type="success" @click="showMessage('这是一条成功消息', 'success')">成功按钮</atm-button>
-                    <atm-button type="warning" @click="showMessage('这是一条警告消息', 'warning')">警告按钮</atm-button>
-                    <atm-button type="error" @click="showMessage('这是一条错误消息', 'error')">错误按钮</atm-button>
+                    <Input type="text" placeholder="请输入内容"></Input>
+                    <Button type="primary" @click="showMessage('这是一条成功消息', 'success')">成功按钮</Button>
+                    <Button type="success" @click="showMessage('这是一条成功消息', 'success')">成功按钮</Button>
+                    <Button type="warning" @click="showMessage('这是一条警告消息', 'warning')">警告按钮</Button>
+                    <Button type="error" @click="showMessage('这是一条错误消息', 'error')">错误按钮</Button>
                 </div>
                 
                 <div class="test-section">
                     <h3>进度条测试：</h3>
-                    <atm-progress :percent="percent"></atm-progress>
+                    <Progress :percent="percent"></Progress>
                     <div class="button-group">
-                        <atm-button @click="increasePercent">增加进度</atm-button>
-                        <atm-button @click="decreasePercent">减少进度</atm-button>
+                        <Button @click="increasePercent">增加进度</Button>
+                        <Button @click="decreasePercent">减少进度</Button>
                     </div>
                 </div>
                 
                 <div class="message">
-                    <atm-button @click="showMessage('您点击了消息按钮', 'info')">显示消息</atm-button>
+                    <Button @click="showMessage('您点击了消息按钮', 'info')">显示消息</Button>
                 </div>
             </div>
-        </atm-card>
+        </Card>
     </div>
 
     <script>
+        console.log('Window对象包含:', Object.keys(window).filter(key => key.includes('atm') || key.includes('Atm')));
+        
+        // 如果全局对象存在，使用它
+        if (window.AtmDS) {
+            console.log('找到AtmDS对象，尝试注册');
+            Vue.use(AtmDS);
+        } else if (window.atmDs) {
+            console.log('找到atmDs对象，尝试注册');
+            Vue.use(atmDs);
+        } else {
+            console.error('找不到AtmDS或atmDs全局对象!');
+        }
+
         new Vue({
             el: '#app',
             data() {
                 return {
                     isAtmDsAvailable: typeof atmDs !== 'undefined',
                     isAtmDSAvailable: typeof AtmDS !== 'undefined',
+                    atmDsVersion: window.AtmDS ? AtmDS.version : (window.atmDs ? atmDs.version : '未知'),
                     percent: 0
                 }
             },
+            mounted() {
+                console.log('全局组件:', Vue.options.components);
+                console.log('AtmDS或atmDs对象:', window.AtmDS || window.atmDs);
+            },
             methods: {
                 showMessage(content, type) {
-                    this.$Message[type](content);
+                    if (this.$Message) {
+                        this.$Message[type](content);
+                    } else {
+                        alert('消息组件未注册：' + content);
+                    }
                 },
                 increasePercent() {
                     if (this.percent < 100) {
