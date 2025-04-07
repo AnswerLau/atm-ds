@@ -55,12 +55,9 @@ Vue.component('atm-card', Card);
 ### CDN 使用
 
 ```html
-<!-- 引入Vue -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.min.js"></script>
-<!-- 引入样式 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/atm-ds/dist/styles/atm-ds.css">
-<!-- 引入组件库 -->
-<script src="https://cdn.jsdelivr.net/npm/atm-ds/dist/atm-ds.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/atm-ds/dist/styles/atm-ds.css">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/atm-ds/dist/atm-ds.min.js"></script>
 ```
 
 ## 使用
