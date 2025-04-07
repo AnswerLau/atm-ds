@@ -16,7 +16,7 @@ module.exports = merge(webpackBaseConfig, {
         path: path.resolve(__dirname, '../dist'),
         publicPath: '/dist/',
         filename: 'atm-ds.min.js',
-        library: 'atmDs',
+        library: 'AtmDS',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
